@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "8790b541-8c70-47e4-a7e6-7ff2fd8a50dd",
+		"name": "MobileStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31985225"
+	},
+	"item": [
+		{
+			"name": "UploadImage",
+			"item": [
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1ef14e4b-8ef6-4350-a211-ac6f9fa0a307",
+										"postman-cloud:///1ef14e4a-9783-40a0-847d-72f1856edc39",
+										"postman-cloud:///1ef0eea2-ca85-4460-ac35-e309c06bbb3f"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/uploads",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"uploads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/uploads/files/iphone-15-xam-titan.jpeg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"uploads",
+								"files",
+								"iphone-15-xam-titan.jpeg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/uploads/files/iphone-15-xam-titan.jpeg",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"uploads",
+								"files",
+								"iphone-15-xam-titan.jpeg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"phucho1\",\r\n    \"password\": \"abc123phuc\",\r\n    \"name\": \"Ho Thanh Phuc\",\r\n    \"birthDate\": \"2004-10-26\",\r\n    \"gender\": 2,\r\n    \"phoneNumber\": \"**********\",\r\n    \"email\": \"abcd@gmail\",\r\n    \"address\": \"HCM\",\r\n    \"role\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/users/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"phuc\",\r\n    \"password\": \"abc123phuc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/users/read",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"users",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/users/read/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"users",
+								"read",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/users/delete/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"users",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDE2ODcxLCJleHAiOjE3MTYwMTg2NzF9.jIQycYJsYsz0ik691Tq_GnrFAQNo6TMcSdyy51IZNy8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dien Thoai\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/categories/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"categories",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/categories/read",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"categories",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDE1MDY0LCJleHAiOjE3MTYwMTY4NjR9.lu_8hlI913w4ONAwk0HELJXhMRP36ncvxdAYfusPddY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ipad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/categories/update/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"categories",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDE5MDA5LCJleHAiOjE3MTYwMjA4MDl9.zm-18I7xH2Sp63fK6j5tSlVMtRgbmrD1RKEmWd7NhdM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/categories/delete/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"categories",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/categories/read/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"categories",
+								"read",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDE4OTQxLCJleHAiOjE3MTYwMjA3NDF9.WtEQjhPaxnjlwh6CtDm3SEcfDhOeZCn4dnOhqh7rsXs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iphone 15 Pro\",\r\n    \"price\": 10000,\r\n    \"quantity\": 10,\r\n    \"description\": \"Ok, nice\",\r\n    \"manufacturer\": \"Apple\",\r\n    \"categoryName\": \"Dien Thoai\",\r\n    \"condition\": \"NEW_PRODUCT\",\r\n    \"imageDTOs\": [\r\n        {\r\n            \"name\": \"iphone15-titan-den.png\",\r\n            \"url\": \"http://localhost:8080/api/vs1/uploads/files/iphone15-titan-den.png\"\r\n        },\r\n        {\r\n            \"name\": \"iphone-15-xam-titan.jpeg\",\r\n            \"url\": \"http://localhost:8080/api/vs1/uploads/files/iphone-15-xam-titan.jpeg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/products/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDE5MzQ0LCJleHAiOjE3MTYwMjExNDR9.3-9PBRKIA8CkN6ERJSYalTYuNI7gfO054jp995El3ts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iphone 15 Pro\",\r\n    \"price\": 10000,\r\n    \"quantity\": 10,\r\n    \"description\": \"Ok, nice nice\",\r\n    \"manufacturer\": \"Apple\",\r\n    \"categoryName\": \"Dien Thoai\",\r\n    \"condition\": \"NEW_PRODUCT\",\r\n    \"imageDTOs\": [\r\n        {\r\n            \"id\": 11,\r\n            \"name\": \"iphone15-titan-den.png\",\r\n            \"url\": \"http://localhost:8080/api/vs1/uploads/files/iphone15-titan-den.png\"\r\n        },\r\n        {\r\n            \"id\": 12,\r\n            \"name\": \"iphone-15-xam-titan.jpeg\",\r\n            \"url\": \"http://localhost:8080/api/vs1/uploads/files/iphone-15-xam-titan.jpeg\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/products/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"products",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/products/read",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"products",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/products/read/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"products",
+								"read",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDM1MDQ2LCJleHAiOjE3MTYwMzY4NDZ9.b6UgJXwqoNx-tY1NqiWhkpigw4PhqWxq9TebxxXDPvs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderDetailDTOs\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"unitPrice\": 20000.0,\r\n            \"productId\": 1\r\n        },\r\n        {\r\n            \"quantity\": 2,\r\n            \"unitPrice\": 15000.0,\r\n            \"productId\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/orders/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orders",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all order with token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDM1ODczLCJleHAiOjE3MTYwMzc2NzN9.1iWw6ISip7YiQfzP-9G_a7noIy7f5HsH4qks8m-KqL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/orders/read",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orders",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id order with token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDM0MjA5LCJleHAiOjE3MTYwMzYwMDl9.0G9vv2_F728elQS_x4MVM5n0XXqubd-k6HbDNgNxBZs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/orders/read/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orders",
+								"read",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDM1ODczLCJleHAiOjE3MTYwMzc2NzN9.1iWw6ISip7YiQfzP-9G_a7noIy7f5HsH4qks8m-KqL0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderDetailDTOs\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 3,\r\n            \"unitPrice\": 20000.0\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 2,\r\n            \"unitPrice\": 15000.0\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/orders/update/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orders",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order_Detail",
+			"item": [
+				{
+					"name": "Get Order Detail with token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDMzMjk3LCJleHAiOjE3MTYwMzUwOTd9.-S5CbzIbokOYR7Sqel60O7mjKrY4wQic7-KCM1a-54E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/orderDetails/read",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orderDetails",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get id and token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjIiwiaWF0IjoxNzE2MDMzMjk3LCJleHAiOjE3MTYwMzUwOTd9.-S5CbzIbokOYR7Sqel60O7mjKrY4wQic7-KCM1a-54E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vs1/orderDetails/read/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"orderDetails",
+								"read",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
