@@ -84,7 +84,7 @@ public class FileUploadController {
         return ResponseEntity.ok().body(fileDetails);
     }
 
-    @DeleteMapping("/files/{filename:.+}")
+    @DeleteMapping("/")
     public ResponseEntity<String> deleteAllFiles() {
         storageService.deleteAll();
         return ResponseEntity.ok().body("All files deleted successfully");

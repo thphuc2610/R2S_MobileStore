@@ -3,6 +3,7 @@ package com.example.mobile_store.service.impl;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,7 +13,6 @@ import java.util.stream.Stream;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
-import org.springframework.util.FileSystemUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.mobile_store.exception.StorageException;
@@ -93,7 +93,16 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public void deleteAll() {
-        FileSystemUtils.deleteRecursively(rootLocation.toFile());
+        Path rootPath = rootLocation.toFile().toPath();
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(rootPath)) {
+            for (Path entry : stream) {
+                if (!Files.isDirectory(entry)) {
+                    Files.delete(entry);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
