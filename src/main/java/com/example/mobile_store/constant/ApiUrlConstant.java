@@ -8,6 +8,7 @@ public class ApiUrlConstant {
     public static final String ORDER = API_VS1 + "/orders";
     public static final String ORDER_DETAIL = API_VS1 + "/orderDetails";
     public static final String PRODUCT = API_VS1 + "/products";
+    public static final String PAYMENT = API_VS1 + "/payments";
     public static final String USER = API_VS1 + "/users";
     public static final String UPLOAD = API_VS1 + "/uploads";
 

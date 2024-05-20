@@ -55,6 +55,8 @@ public class SecurityConfig {
                 .requestMatchers(ApiUrlConstant.UPLOAD + "/**").permitAll()
                 .requestMatchers(ApiUrlConstant.ORDER + "/**").permitAll()
                 .requestMatchers(ApiUrlConstant.ORDER_DETAIL + "/**").permitAll()
+
+                .requestMatchers(ApiUrlConstant.PAYMENT + "/**").hasAuthority("ROLE_MEMBER") 
                 
                 .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults());

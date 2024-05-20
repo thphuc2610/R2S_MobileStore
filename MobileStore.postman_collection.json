@@ -124,7 +124,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"phuc\",\r\n    \"password\": \"abc123phuc\"\r\n}",
+							"raw": "{\r\n    \"username\": \"phucho\",\r\n    \"password\": \"abc123phuc\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -720,6 +720,53 @@
 								"orderDetails",
 								"read",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "create-payment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaHVjaG8iLCJpYXQiOjE3MTYxODkwNzgsImV4cCI6MTcxNjE5MDg3OH0.VMPeQlTfn2nTqcOyFOKOCu3GOXC2GLhyF5oCNezTLmc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/vs1/payments/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vs1",
+								"payments",
+								"create"
 							]
 						}
 					},
